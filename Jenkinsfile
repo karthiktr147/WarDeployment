@@ -24,9 +24,8 @@ pipeline{
                     }
                 }
                 script{
-                   Jenkins.instance.getItemByFullName('KarthikServerDeploy1').builds.findAll { it.number > 86 && it.number < 92 && it.result 
-== Result.SUCCESS }.each { it.delete() }
-//change success to failure if u have to delete failed builds
+                   Jenkins.instance.getItemByFullName('KarthikServerDeploy1').builds.findAll { it.number > 86 && it.number < 92 && it.result == Result.SUCCESS }.each { it.delete() }
+
                 }
             }
         }
